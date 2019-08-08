@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@tmdb-api": [
+        "dist/tmdb-api"
+      ],
+      "@tmdb-api/*": [
+        "dist/tmdb-api/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
