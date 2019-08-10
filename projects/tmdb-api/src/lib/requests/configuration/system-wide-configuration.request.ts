@@ -1,19 +1,11 @@
-import {IRequest} from '../../models/common/request.model';
-import {EHttpMethod} from '../../enums/http-method.enum';
+import {BaseRequest} from '../base.request';
 
-export class TMDBSystemWideConfigurationRequest implements IRequest {
+export class TMDBSystemWideConfigurationRequest extends BaseRequest {
   constructor() {
-  }
-
-  public method(): EHttpMethod {
-    return EHttpMethod.Get;
+    super();
   }
 
   public getUriWithPathParameters(): string {
     return '/configuration';
-  }
-
-  public getUriQueryParameters(): string {
-    return '';
   }
 }
