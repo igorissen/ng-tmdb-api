@@ -1,21 +1,18 @@
 import {IObject} from '../../models/common/js-object.model';
-import {BaseRequest} from '../base.request';
+import {BaseMovieRequest} from './base-movie.request';
 
-export class TMDBMovieDetailsRequest extends BaseRequest {
-  private readonly id: string;
+export class TMDBMovieDetailsRequest extends BaseMovieRequest {
   private readonly queryParams: IObject;
 
   constructor(id: string, queryParams?: IObject) {
-    super();
-    this.id = id;
-
+    super(id);
     if (queryParams) {
       this.queryParams = queryParams;
     }
   }
 
   getUriWithPathParameters(): string {
-    return `/movie/${this.id}`;
+    return super.getUriWithPathParameters();
   }
 
   getUriQueryParameters(): string {

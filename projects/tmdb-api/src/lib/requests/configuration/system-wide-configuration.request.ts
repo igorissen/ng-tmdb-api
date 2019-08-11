@@ -1,11 +1,11 @@
-import {BaseRequest} from '../base.request';
+import {BaseConfigurationRequest} from './base-configuration.request';
 
-export class TMDBSystemWideConfigurationRequest extends BaseRequest {
+export class TMDBSystemWideConfigurationRequest extends BaseConfigurationRequest {
   constructor() {
     super();
   }
 
-  public getUriWithPathParameters(): string {
-    return '/configuration';
+  getUriWithPathParameters(): string {
+    return super.getUriWithPathParameters();
   }
 }
