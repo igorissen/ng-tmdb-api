@@ -1,6 +1,6 @@
 import {TMDBTitleModel} from './title.model';
 
-export interface TMDBAlternativeTitles {
+export interface TMDBAlternativeTitlesModel {
   id: number;
   titles?: TMDBTitleModel[];
 }

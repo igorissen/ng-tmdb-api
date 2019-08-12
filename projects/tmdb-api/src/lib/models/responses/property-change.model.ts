@@ -1,6 +1,6 @@
-import {TMDBPropertyChangeAction} from './property-change-action.model';
+import {TMDBPropertyChangeActionModel} from './property-change-action.model';
 
-export interface TMDBPropertyChange {
+export interface TMDBPropertyChangeModel {
   key: string;
-  items?: TMDBPropertyChangeAction[];
+  items?: TMDBPropertyChangeActionModel[];
 }

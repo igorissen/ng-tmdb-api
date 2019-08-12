@@ -1,4 +1,4 @@
-export interface TMDBPropertyChangeAction {
+export interface TMDBPropertyChangeActionModel {
   id: string;
   action?: string;
   time?: string;

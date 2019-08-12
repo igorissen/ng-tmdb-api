@@ -1,5 +1,5 @@
-import {TMDBPropertyChange} from './property-change.model';
+import {TMDBPropertyChangeModel} from './property-change.model';
 
-export interface TMDBChanges {
-  changes?: TMDBPropertyChange[];
+export interface TMDBChangesModel {
+  changes?: TMDBPropertyChangeModel[];
 }
