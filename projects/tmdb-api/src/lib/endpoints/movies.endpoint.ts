@@ -8,6 +8,8 @@ import {TMDBMovieModel} from '../models/responses/movie.model';
 import {Observable} from 'rxjs';
 import {TMDBAlternativeTitles} from '../models/responses/alternative-titles.model';
 import {TMDBMovieAlternativeTitlesRequest} from '../requests/movies/alternative-titles.request';
+import {TMDBMovieChangesRequest} from '../requests/movies/changes.request';
+import {TMDBChanges} from '../models/responses/changes.model';
 
 @Injectable({providedIn: 'root'})
 export class TMDBMoviesEndpoint {
@@ -24,5 +26,11 @@ export class TMDBMoviesEndpoint {
     return this.requestHandler
       .execute(new TMDBMovieAlternativeTitlesRequest(id, queryParams))
       .pipe(map((response: HttpResponse<TMDBAlternativeTitles>) => response.body));
+  }
+
+  public getChanges(id: string, queryParams?: IObject): Observable<TMDBChanges> {
+    return this.requestHandler
+      .execute(new TMDBMovieChangesRequest(id, queryParams))
+      .pipe(map((response: HttpResponse<TMDBChanges>) => response.body));
   }
 }
