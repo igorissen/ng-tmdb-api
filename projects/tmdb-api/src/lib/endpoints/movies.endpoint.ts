@@ -1,14 +1,17 @@
 import {Injectable} from '@angular/core';
 import {TMDBRequestHandler} from '../core/request-handler';
 import {IObject} from '../models/common/js-object.model';
-import {TMDBMovieDetailsRequest} from '../requests/movies/details.request';
 import {map} from 'rxjs/operators';
 import {HttpResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {TMDBMovieAlternativeTitlesRequest} from '../requests/movies/alternative-titles.request';
-import {TMDBMovieChangesRequest} from '../requests/movies/changes.request';
-import {TMDBMovieCreditsRequest} from '../requests/movies/credits.request';
-import {TMDBMovieExternalIdsRequest} from '../requests/movies/external-ids.request';
+import {
+  TMDBMovieAlternativeTitlesRequest,
+  TMDBMovieChangesRequest,
+  TMDBMovieCreditsRequest,
+  TMDBMovieDetailsRequest,
+  TMDBMovieExternalIdsRequest,
+  TMDBMovieImagesRequest
+} from '../requests/movies';
 
 @Injectable({providedIn: 'root'})
 export class TMDBMoviesEndpoint {
@@ -42,6 +45,12 @@ export class TMDBMoviesEndpoint {
   public getExternalIds(id: string): Observable<unknown> {
     return this.requestHandler
       .execute(new TMDBMovieExternalIdsRequest(id))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getImages(id: string): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMovieImagesRequest(id))
       .pipe(map((response: HttpResponse<unknown>) => response.body));
   }
 }
