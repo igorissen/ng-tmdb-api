@@ -12,6 +12,8 @@ import {TMDBMovieChangesRequest} from '../requests/movies/changes.request';
 import {TMDBChangesModel} from '../models/responses/changes.model';
 import {TMDBCreditsModel} from '../models/responses/credits.model';
 import {TMDBMovieCreditsRequest} from '../requests/movies/credits.request';
+import {TMDBExternalIdsModel} from '../models/responses/external-ids.model';
+import {TMDBMovieExternalIdsRequest} from '../requests/movies/external-ids.request';
 
 @Injectable({providedIn: 'root'})
 export class TMDBMoviesEndpoint {
@@ -40,5 +42,11 @@ export class TMDBMoviesEndpoint {
     return this.requestHandler
       .execute(new TMDBMovieCreditsRequest(id, queryParams))
       .pipe(map((response: HttpResponse<TMDBCreditsModel>) => response.body));
+  }
+
+  public getExternalIds(id: string): Observable<TMDBExternalIdsModel> {
+    return this.requestHandler
+      .execute(new TMDBMovieExternalIdsRequest(id))
+      .pipe(map((response: HttpResponse<TMDBExternalIdsModel>) => response.body));
   }
 }
