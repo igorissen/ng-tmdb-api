@@ -4,3 +4,4 @@ export * from './credits.request';
 export * from './details.request';
 export * from './external-ids.request';
 export * from './images.request';
+export * from './keywords.request';

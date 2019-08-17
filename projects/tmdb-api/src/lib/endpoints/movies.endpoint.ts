@@ -10,7 +10,8 @@ import {
   TMDBMovieCreditsRequest,
   TMDBMovieDetailsRequest,
   TMDBMovieExternalIdsRequest,
-  TMDBMovieImagesRequest
+  TMDBMovieImagesRequest,
+  TMDBMovieKeywordsRequest
 } from '../requests/movies';
 
 @Injectable({providedIn: 'root'})
@@ -48,9 +49,15 @@ export class TMDBMoviesEndpoint {
       .pipe(map((response: HttpResponse<unknown>) => response.body));
   }
 
-  public getImages(id: string): Observable<unknown> {
+  public getImages(id: string, queryParams?: IObject): Observable<unknown> {
     return this.requestHandler
-      .execute(new TMDBMovieImagesRequest(id))
+      .execute(new TMDBMovieImagesRequest(id, queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getKeywords(id: string, queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMovieKeywordsRequest(id, queryParams))
       .pipe(map((response: HttpResponse<unknown>) => response.body));
   }
 }
