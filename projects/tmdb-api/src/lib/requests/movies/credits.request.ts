@@ -1,4 +1,4 @@
-import {BaseMovieRequest} from './base-movie.request';
+import {BaseMovieRequest} from './_base-movie.request';
 import {IObject} from '../../models/common/js-object.model';
 
 export class TMDBMovieCreditsRequest extends BaseMovieRequest {

@@ -1,5 +1,5 @@
 import {IObject} from '../../models/common/js-object.model';
-import {BaseMovieRequest} from './base-movie.request';
+import {BaseMovieRequest} from './_base-movie.request';
 
 export class TMDBMovieKeywordsRequest extends BaseMovieRequest {
   private readonly queryParams: IObject;

@@ -1,18 +1,18 @@
 import {IObject} from '../../models/common/js-object.model';
 import {BaseMovieRequest} from './_base-movie.request';
 
-export class TMDBMovieAlternativeTitlesRequest extends BaseMovieRequest {
+export class TMDBMovieNowPlayingRequest extends BaseMovieRequest {
   private readonly queryParams: IObject;
 
-  constructor(id: string, queryParams?: IObject) {
-    super(id);
+  constructor(queryParams?: IObject) {
+    super();
     if (queryParams) {
       this.queryParams = queryParams;
     }
   }
 
   getUriWithPathParameters(): string {
-    return `${super.getUriWithPathParameters()}/alternative_titles`;
+    return `${super.getUriWithPathParameters()}/now_playing`;
   }
 
   getUriQueryParameters(): string {

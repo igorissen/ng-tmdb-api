@@ -11,7 +11,18 @@ import {
   TMDBMovieDetailsRequest,
   TMDBMovieExternalIdsRequest,
   TMDBMovieImagesRequest,
-  TMDBMovieKeywordsRequest
+  TMDBMovieKeywordsRequest,
+  TMDBMovieLatestRequest,
+  TMDBMovieListsRequest,
+  TMDBMovieNowPlayingRequest,
+  TMDBMoviePopularRequest,
+  TMDBMovieRecommendationsRequest,
+  TMDBMovieReleaseDatesRequest,
+  TMDBMovieReviewsRequest,
+  TMDBMovieTopRatedRequest,
+  TMDBMovieTranslationsRequest,
+  TMDBMovieUpcomingRequest,
+  TMDBMovieVideosRequest
 } from '../requests/movies';
 
 @Injectable({providedIn: 'root'})
@@ -58,6 +69,78 @@ export class TMDBMoviesEndpoint {
   public getKeywords(id: string, queryParams?: IObject): Observable<unknown> {
     return this.requestHandler
       .execute(new TMDBMovieKeywordsRequest(id, queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getReleaseDates(id: string): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMovieReleaseDatesRequest(id))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getVideos(id: string, queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMovieVideosRequest(id, queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getTranslations(id: string): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMovieTranslationsRequest(id))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getRecommendations(id: string, queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMovieRecommendationsRequest(id, queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getSimilar(id: string, queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMovieRecommendationsRequest(id, queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getReviews(id: string, queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMovieReviewsRequest(id, queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getLists(id: string, queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMovieListsRequest(id, queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getLatest(queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMovieLatestRequest(queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getNowPlaying(queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMovieNowPlayingRequest(queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getPopular(queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMoviePopularRequest(queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getTopRated(queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMovieTopRatedRequest(queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getUpcoming(queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMovieUpcomingRequest(queryParams))
       .pipe(map((response: HttpResponse<unknown>) => response.body));
   }
 }
