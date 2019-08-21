@@ -1,4 +1,5 @@
 export enum EHttpMethod {
   Get = 'GET',
-  Post = 'POST'
+  Post = 'POST',
+  Delete = 'DELETE'
 }
