@@ -1,4 +1,4 @@
-import {BaseConfigurationRequest} from './base-configuration.request';
+import {BaseConfigurationRequest} from './_base-configuration.request';
 
 export class TMDBSystemWideConfigurationRequest extends BaseConfigurationRequest {
   constructor() {
