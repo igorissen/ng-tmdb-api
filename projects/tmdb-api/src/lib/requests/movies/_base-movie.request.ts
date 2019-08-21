@@ -13,6 +13,6 @@ export class BaseMovieRequest extends BaseRequest {
   }
 
   getUriWithPathParameters(): string {
-    return this.id ? `${this.basePath}/${this.id}` : `${this.basePath}`;
+    return this.id ? `${this.basePath}/${this.id}` : this.basePath;
   }
 }
