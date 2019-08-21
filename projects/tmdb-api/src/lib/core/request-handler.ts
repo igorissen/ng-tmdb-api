@@ -20,6 +20,10 @@ export class TMDBRequestHandler implements IRequestHandler {
   }
 
   execute(request: IRequest): Observable<any> {
-    return this.httpClient.request(request.method(), this.buildUrl(request), {headers: this.buildHeaders(), observe: 'response'});
+    return this.httpClient.request(request.method(), this.buildUrl(request), {
+      body: request.getPayload(),
+      headers: this.buildHeaders(),
+      observe: 'response'
+    });
   }
 }

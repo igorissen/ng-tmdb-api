@@ -3,7 +3,7 @@ import {TMDBRequestHandler} from '../core/request-handler';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {HttpResponse} from '@angular/common/http';
-import {TMDBSystemWideConfigurationRequest} from '../requests/configuration/system-wide-configuration.request';
+import {TMDBSystemWideConfigurationRequest} from '../requests/configuration';
 
 @Injectable({providedIn: 'root'})
 export class TMDBConfigurationEndpoint {
