@@ -7,6 +7,7 @@ import {
   TMDBCompaniesEndpoint,
   TMDBConfigurationEndpoint,
   TMDBCreditsEndpoint,
+  TMDBDiscoverEndpoint,
   TMDBMoviesEndpoint
 } from '../endpoints';
 
@@ -20,7 +21,8 @@ export class TMDBClient {
     public changes: TMDBChangesEndpoint,
     public collections: TMDBCollectionsEndpoint,
     public companies: TMDBCompaniesEndpoint,
-    public credits: TMDBCreditsEndpoint
+    public credits: TMDBCreditsEndpoint,
+    public discover: TMDBDiscoverEndpoint
   ) {
   }
 }
