@@ -4,28 +4,27 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {HttpResponse} from '@angular/common/http';
 import {TMDBCompanyAlternativeNamesRequest, TMDBCompanyDetailsRequest, TMDBCompanyImagesRequest} from '../requests/companies';
-import {IObject} from '../models/common/js-object.model';
 
 @Injectable({providedIn: 'root'})
 export class TMDBCompaniesEndpoint {
   constructor(private requestHandler: TMDBRequestHandler) {
   }
 
-  public getCompanyAlternativeNames(id: string, queryParams?: IObject): Observable<unknown> {
+  public getAlternativeNames(id: string): Observable<unknown> {
     return this.requestHandler
-      .execute(new TMDBCompanyAlternativeNamesRequest(id, queryParams))
+      .execute(new TMDBCompanyAlternativeNamesRequest(id))
       .pipe(map((response: HttpResponse<unknown>) => response.body));
   }
 
-  public getCompanyDetails(id: string, queryParams?: IObject): Observable<unknown> {
+  public getDetails(id: string): Observable<unknown> {
     return this.requestHandler
-      .execute(new TMDBCompanyDetailsRequest(id, queryParams))
+      .execute(new TMDBCompanyDetailsRequest(id))
       .pipe(map((response: HttpResponse<unknown>) => response.body));
   }
 
-  public getCompanyImages(id: string, queryParams?: IObject): Observable<unknown> {
+  public getImages(id: string): Observable<unknown> {
     return this.requestHandler
-      .execute(new TMDBCompanyImagesRequest(id, queryParams))
+      .execute(new TMDBCompanyImagesRequest(id))
       .pipe(map((response: HttpResponse<unknown>) => response.body));
   }
 }
