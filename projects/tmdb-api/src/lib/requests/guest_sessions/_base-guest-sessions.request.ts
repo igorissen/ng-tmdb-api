@@ -6,7 +6,7 @@ export class BaseGuestSessionsRequest extends BaseRequest {
 
   constructor(guestSessionId?: string) {
     super();
-    this.basePath = '/movie';
+    this.basePath = '/guest_session';
     if (guestSessionId) {
       this.guestSessionId = guestSessionId;
     }
