@@ -13,3 +13,4 @@ export * from './guest-sessions.endpoint';
 export * from './keywords.endpoint';
 export * from './lists.endpoint';
 export * from './networks.endpoint';
+export * from './trending.endpoint';

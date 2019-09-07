@@ -14,7 +14,8 @@ import {
   TMDBKeywordsEndpoint,
   TMDBListsEndpoint,
   TMDBMoviesEndpoint,
-  TMDBNetworksEndpoint
+  TMDBNetworksEndpoint,
+  TMDBTrendingEndpoint
 } from '../endpoints';
 
 @Injectable({providedIn: 'root'})
@@ -34,7 +35,8 @@ export class TMDBClient {
     public guestSessions: TMDBGuestSessionsEndpoint,
     public keywords: TMDBKeywordsEndpoint,
     public lists: TMDBListsEndpoint,
-    public networks: TMDBNetworksEndpoint
+    public networks: TMDBNetworksEndpoint,
+    public trending: TMDBTrendingEndpoint
   ) {
   }
 }
