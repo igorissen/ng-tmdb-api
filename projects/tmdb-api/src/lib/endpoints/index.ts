@@ -7,3 +7,4 @@ export * from './collections.endpoint';
 export * from './companies.endpoint';
 export * from './credits.endpoint';
 export * from './discover.endpoint';
+export * from './find.endpoint';
