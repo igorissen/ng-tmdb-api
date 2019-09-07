@@ -10,3 +10,4 @@ export * from './discover.endpoint';
 export * from './find.endpoint';
 export * from './genres.endpoint';
 export * from './guest-sessions.endpoint';
+export * from './keywords.endpoint';

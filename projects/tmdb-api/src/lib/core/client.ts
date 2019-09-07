@@ -11,6 +11,7 @@ import {
   TMDBFindEndpoint,
   TMDBGenresEndpoint,
   TMDBGuestSessionsEndpoint,
+  TMDBKeywordsEndpoint,
   TMDBMoviesEndpoint
 } from '../endpoints';
 
@@ -28,7 +29,8 @@ export class TMDBClient {
     public discover: TMDBDiscoverEndpoint,
     public find: TMDBFindEndpoint,
     public genres: TMDBGenresEndpoint,
-    public guestSessions: TMDBGuestSessionsEndpoint
+    public guestSessions: TMDBGuestSessionsEndpoint,
+    public keywords: TMDBKeywordsEndpoint
   ) {
   }
 }
