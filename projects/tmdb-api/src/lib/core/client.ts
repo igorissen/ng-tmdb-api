@@ -13,7 +13,8 @@ import {
   TMDBGuestSessionsEndpoint,
   TMDBKeywordsEndpoint,
   TMDBListsEndpoint,
-  TMDBMoviesEndpoint
+  TMDBMoviesEndpoint,
+  TMDBNetworksEndpoint
 } from '../endpoints';
 
 @Injectable({providedIn: 'root'})
@@ -32,7 +33,8 @@ export class TMDBClient {
     public genres: TMDBGenresEndpoint,
     public guestSessions: TMDBGuestSessionsEndpoint,
     public keywords: TMDBKeywordsEndpoint,
-    public lists: TMDBListsEndpoint
+    public lists: TMDBListsEndpoint,
+    public networks: TMDBNetworksEndpoint
   ) {
   }
 }
