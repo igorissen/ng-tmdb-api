@@ -8,3 +8,4 @@ export * from './companies.endpoint';
 export * from './credits.endpoint';
 export * from './discover.endpoint';
 export * from './find.endpoint';
+export * from './genres.endpoint';
