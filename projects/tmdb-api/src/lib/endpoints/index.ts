@@ -16,3 +16,4 @@ export * from './networks.endpoint';
 export * from './trending.endpoint';
 export * from './people.endpoint';
 export * from './reviews.endpoint';
+export * from './search.endpoint';
