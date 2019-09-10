@@ -16,6 +16,7 @@ import {
   TMDBMoviesEndpoint,
   TMDBNetworksEndpoint,
   TMDBPeopleEndpoint,
+  TMDBReviewsEndpoint,
   TMDBTrendingEndpoint
 } from '../endpoints';
 
@@ -38,7 +39,8 @@ export class TMDBClient {
     public lists: TMDBListsEndpoint,
     public networks: TMDBNetworksEndpoint,
     public trending: TMDBTrendingEndpoint,
-    public people: TMDBPeopleEndpoint
+    public people: TMDBPeopleEndpoint,
+    public reviews: TMDBReviewsEndpoint
   ) {
   }
 }
