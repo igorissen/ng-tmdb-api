@@ -8,6 +8,7 @@ import {
   TMDBMovieAlternativeTitlesRequest,
   TMDBMovieChangesRequest,
   TMDBMovieCreditsRequest,
+  TMDBMovieDeleteRatingRequest,
   TMDBMovieDetailsRequest,
   TMDBMovieExternalIdsRequest,
   TMDBMovieImagesRequest,
@@ -16,6 +17,7 @@ import {
   TMDBMovieListsRequest,
   TMDBMovieNowPlayingRequest,
   TMDBMoviePopularRequest,
+  TMDBMovieRateRequest,
   TMDBMovieRecommendationsRequest,
   TMDBMovieReleaseDatesRequest,
   TMDBMovieReviewsRequest,
@@ -28,6 +30,18 @@ import {
 @Injectable({providedIn: 'root'})
 export class TMDBMoviesEndpoint {
   constructor(private requestHandler: TMDBRequestHandler) {
+  }
+
+  public deleteRating(id: string, queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMovieDeleteRatingRequest(id, queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public rate(id: string, payload: unknown, queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBMovieRateRequest(id, payload, queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
   }
 
   public getDetails(id: string, queryParams?: IObject): Observable<unknown> {

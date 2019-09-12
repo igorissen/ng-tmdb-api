@@ -17,3 +17,5 @@ export * from './now-playing.request';
 export * from './popular.request';
 export * from './top-rated.request';
 export * from './upcoming.request';
+export * from './delete-rating.request';
+export * from './rate.request';
