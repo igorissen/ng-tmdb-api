@@ -19,7 +19,8 @@ import {
   TMDBReviewsEndpoint,
   TMDBSearchEndpoint,
   TMDBTrendingEndpoint,
-  TMDBTvEndpoint
+  TMDBTvEndpoint,
+  TMDBTvSeasonsEndpoint
 } from '../endpoints';
 
 @Injectable({providedIn: 'root'})
@@ -44,7 +45,8 @@ export class TMDBClient {
     public people: TMDBPeopleEndpoint,
     public reviews: TMDBReviewsEndpoint,
     public search: TMDBSearchEndpoint,
-    public tv: TMDBTvEndpoint
+    public tv: TMDBTvEndpoint,
+    public tvSeasons: TMDBTvSeasonsEndpoint
   ) {
   }
 }
