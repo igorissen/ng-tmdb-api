@@ -20,6 +20,7 @@ import {
   TMDBSearchEndpoint,
   TMDBTrendingEndpoint,
   TMDBTvEndpoint,
+  TMDBTvEpisodesEndpoint,
   TMDBTvSeasonsEndpoint
 } from '../endpoints';
 
@@ -46,7 +47,8 @@ export class TMDBClient {
     public reviews: TMDBReviewsEndpoint,
     public search: TMDBSearchEndpoint,
     public tv: TMDBTvEndpoint,
-    public tvSeasons: TMDBTvSeasonsEndpoint
+    public tvSeasons: TMDBTvSeasonsEndpoint,
+    public tvEpisodes: TMDBTvEpisodesEndpoint
   ) {
   }
 }

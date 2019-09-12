@@ -19,3 +19,4 @@ export * from './reviews.endpoint';
 export * from './search.endpoint';
 export * from './tv.endpoint';
 export * from './tv-seasons.endpoint';
+export * from './tv-episodes.endpoint';
