@@ -4,8 +4,8 @@ import {BaseTvSeasonsRequest} from './_base-tv-seasons.request';
 export class TMDBTvSeasonsChangesRequest extends BaseTvSeasonsRequest {
   private readonly queryParams: IObject;
 
-  constructor(id: string, season: number, queryParams?: IObject) {
-    super(id, season);
+  constructor(season: string, queryParams?: IObject) {
+    super(null, season);
     if (queryParams) {
       this.queryParams = queryParams;
     }

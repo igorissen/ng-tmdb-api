@@ -4,7 +4,7 @@ import {BaseTvSeasonsRequest} from './_base-tv-seasons.request';
 export class TMDBTvSeasonsAccountStatesRequest extends BaseTvSeasonsRequest {
   private readonly queryParams: IObject;
 
-  constructor(id: string, season: number, queryParams?: IObject) {
+  constructor(id: string, season: string, queryParams?: IObject) {
     super(id, season);
     if (queryParams) {
       this.queryParams = queryParams;

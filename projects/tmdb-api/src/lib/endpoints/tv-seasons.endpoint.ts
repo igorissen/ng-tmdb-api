@@ -19,43 +19,43 @@ export class TMDBTvSeasonsEndpoint {
   constructor(private requestHandler: TMDBRequestHandler) {
   }
 
-  public getDetails(id: string, season: number, queryParams?: IObject): Observable<unknown> {
+  public getDetails(id: string, season: string, queryParams?: IObject): Observable<unknown> {
     return this.requestHandler
       .execute(new TMDBTvSeasonsDetailsRequest(id, season, queryParams))
       .pipe(map((response: HttpResponse<unknown>) => response.body));
   }
 
-  public getAccountStates(id: string, season: number, queryParams?: IObject): Observable<unknown> {
+  public getAccountStates(id: string, season: string, queryParams?: IObject): Observable<unknown> {
     return this.requestHandler
       .execute(new TMDBTvSeasonsAccountStatesRequest(id, season, queryParams))
       .pipe(map((response: HttpResponse<unknown>) => response.body));
   }
 
-  public getChanges(id: string, season: number, queryParams?: IObject): Observable<unknown> {
+  public getChanges(season: string, queryParams?: IObject): Observable<unknown> {
     return this.requestHandler
-      .execute(new TMDBTvSeasonsChangesRequest(id, season, queryParams))
+      .execute(new TMDBTvSeasonsChangesRequest(season, queryParams))
       .pipe(map((response: HttpResponse<unknown>) => response.body));
   }
 
-  public getCredits(id: string, season: number, queryParams?: IObject): Observable<unknown> {
+  public getCredits(id: string, season: string, queryParams?: IObject): Observable<unknown> {
     return this.requestHandler
       .execute(new TMDBTvSeasonsCreditsRequest(id, season, queryParams))
       .pipe(map((response: HttpResponse<unknown>) => response.body));
   }
 
-  public getExternalIds(id: string, season: number): Observable<unknown> {
+  public getExternalIds(id: string, season: string): Observable<unknown> {
     return this.requestHandler
       .execute(new TMDBTvSeasonsExternalIdsRequest(id, season))
       .pipe(map((response: HttpResponse<unknown>) => response.body));
   }
 
-  public getImages(id: string, season: number, queryParams?: IObject): Observable<unknown> {
+  public getImages(id: string, season: string, queryParams?: IObject): Observable<unknown> {
     return this.requestHandler
       .execute(new TMDBTvSeasonsImagesRequest(id, season, queryParams))
       .pipe(map((response: HttpResponse<unknown>) => response.body));
   }
 
-  public getVideos(id: string, season: number, queryParams?: IObject): Observable<unknown> {
+  public getVideos(id: string, season: string, queryParams?: IObject): Observable<unknown> {
     return this.requestHandler
       .execute(new TMDBTvSeasonsVideosRequest(id, season, queryParams))
       .pipe(map((response: HttpResponse<unknown>) => response.body));

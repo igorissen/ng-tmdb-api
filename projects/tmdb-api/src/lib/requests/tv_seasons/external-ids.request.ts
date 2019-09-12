@@ -1,7 +1,7 @@
 import {BaseTvSeasonsRequest} from './_base-tv-seasons.request';
 
 export class TMDBTvSeasonsExternalIdsRequest extends BaseTvSeasonsRequest {
-  constructor(id: string, season: number) {
+  constructor(id: string, season: string) {
     super(id, season);
   }
 
