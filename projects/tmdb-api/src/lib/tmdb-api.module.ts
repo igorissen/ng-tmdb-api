@@ -9,12 +9,11 @@ import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   imports: [HttpClientModule]
 })
-export class NgxTMDBApiModule {
+export class NgTMDBApiModule {
   public static forRoot(moduleConfig: ITMDBApiModuleConfig): ModuleWithProviders {
-    const config: ITMDBApiModuleConfig = Object.assign({apiBaseUrl: 'https://api.themoviedb.org', apiVersion: 4}, moduleConfig);
-    console.log(config);
+    const config: ITMDBApiModuleConfig = Object.assign({apiBaseUrl: 'https://api.themoviedb.org', apiVersion: 3}, moduleConfig);
     return {
-      ngModule: NgxTMDBApiModule,
+      ngModule: NgTMDBApiModule,
       providers: [
         {useValue: config, provide: TMDB_API_MODULE_CONFIG},
         TMDBClient,
