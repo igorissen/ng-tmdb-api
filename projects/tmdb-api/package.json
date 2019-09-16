@@ -1,8 +1,8 @@
 {
-  "name": "@igorissen/tmdb-api",
-  "version": "0.0.1",
+  "name": "@igorissen/ng-tmdb-api",
+  "version": "1.0.0",
   "peerDependencies": {
-    "@angular/common": "^8.2.0",
-    "@angular/core": "^8.2.0"
+    "@angular/common": "^8.2.5",
+    "@angular/core": "^8.2.5"
   }
 }

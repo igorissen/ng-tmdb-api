@@ -160,8 +160,7 @@ import {HttpClientModule} from &#x27;@angular/common/http&#x27;;
 })
 export class NgTMDBApiModule {
   public static forRoot(moduleConfig: ITMDBApiModuleConfig): ModuleWithProviders {
-    const config: ITMDBApiModuleConfig &#x3D; Object.assign({apiBaseUrl: &#x27;https://api.themoviedb.org&#x27;, apiVersion: 4}, moduleConfig);
-    console.log(config);
+    const config: ITMDBApiModuleConfig &#x3D; Object.assign({apiBaseUrl: &#x27;https://api.themoviedb.org&#x27;, apiVersion: 3}, moduleConfig);
     return {
       ngModule: NgTMDBApiModule,
       providers: [
