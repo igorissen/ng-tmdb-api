@@ -1,7 +1,7 @@
 import {IObject} from '../../models/common/js-object.model';
-import {BaseMovieRequest} from './_base-movie.request';
+import {BaseTvRequest} from './_base-tv.request';
 
-export class TMDBMovieUpcomingRequest extends BaseMovieRequest {
+export class TMDBTvUpcomingRequest extends BaseTvRequest {
   private readonly queryParams: IObject;
 
   constructor(queryParams?: IObject) {

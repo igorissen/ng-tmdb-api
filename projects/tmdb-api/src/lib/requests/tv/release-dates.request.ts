@@ -1,6 +1,6 @@
-import {BaseMovieRequest} from './_base-movie.request';
+import {BaseTvRequest} from './_base-tv.request';
 
-export class TMDBMovieReleaseDatesRequest extends BaseMovieRequest {
+export class TMDBTvReleaseDatesRequest extends BaseTvRequest {
   constructor(id: string) {
     super(id);
   }

@@ -11,10 +11,6 @@ export class TMDBMovieDetailsRequest extends BaseMovieRequest {
     }
   }
 
-  getUriWithPathParameters(): string {
-    return super.getUriWithPathParameters();
-  }
-
   getUriQueryParameters(): string {
     return super.getUriQueryParameters(this.queryParams);
   }

@@ -17,14 +17,18 @@ import {
   TMDBTvImagesRequest,
   TMDBTvKeywordsRequest,
   TMDBTvLatestRequest,
+  TMDBTvListsRequest,
+  TMDBTvNowPlayingRequest,
   TMDBTvOnTheAirRequest,
   TMDBTvPopularRequest,
   TMDBTvRateRequest,
   TMDBTvRecommendationsRequest,
+  TMDBTvReleaseDatesRequest,
   TMDBTvReviewsRequest,
   TMDBTvScreenedTheatricallyRequest,
   TMDBTvTopRatedRequest,
   TMDBTvTranslationsRequest,
+  TMDBTvUpcomingRequest,
   TMDBTvVideosRequest
 } from '../requests/tv';
 
@@ -162,6 +166,30 @@ export class TMDBTvEndpoint {
   public getOnTheAir(queryParams?: IObject): Observable<unknown> {
     return this.requestHandler
       .execute(new TMDBTvOnTheAirRequest(queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getLists(id: string, queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBTvListsRequest(id, queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getNowPlaying(queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBTvNowPlayingRequest(queryParams))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getReleaseDates(id: string): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBTvReleaseDatesRequest(id))
+      .pipe(map((response: HttpResponse<unknown>) => response.body));
+  }
+
+  public getUpcoming(queryParams?: IObject): Observable<unknown> {
+    return this.requestHandler
+      .execute(new TMDBTvUpcomingRequest(queryParams))
       .pipe(map((response: HttpResponse<unknown>) => response.body));
   }
 }

@@ -3,9 +3,6 @@ import {EHttpMethod} from '../enums/http-method.enum';
 import {IObject} from '../models/common/js-object.model';
 
 export class BaseRequest implements IRequest {
-  constructor() {
-  }
-
   method(): EHttpMethod {
     return EHttpMethod.Get;
   }
