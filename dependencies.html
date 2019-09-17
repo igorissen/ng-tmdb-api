@@ -27,70 +27,9 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content getting-started">
+               <div class="content package-dependencies">
                    <div class="content-data">
 
-<h1 id="ng-tmdb-api">ng-tmdb-api</h1>
-<p>Angular library which provides a service to make all available requests to <a href="https://developers.themoviedb.org/3/getting-started/introduction">TheMovieDatabase API</a>.</p>
-<p><strong>NOTE</strong>: Only version 3 of the API is implemented.</p>
-<h2 id="roadmap">Roadmap</h2>
-<ul>
-<li><input disabled="" type="checkbox"> Add version 4 of TMDB API</li>
-<li><input disabled="" type="checkbox"> Add unit tests</li>
-</ul>
-<h2 id="getting-started">Getting started</h2>
-<h3 id="installation">Installation</h3>
-<div><pre class="line-numbers"><code class="language-none">$ npm install --save &#64;igorissen/ng-tmdb-api</code></pre></div><h3 id="usage">Usage</h3>
-<p>Import <code>NgxTMDBApiModule</code> and configure it with your TheMovieDatabase API key.</p>
-<div><pre class="line-numbers"><code class="language-typescript">import { BrowserModule } from &#39;&#64;angular/platform-browser&#39;;
-import { NgModule } from &#39;&#64;angular/core&#39;;
-import { NgxTMDBApiModule } from &#39;&#64;igorissen/tmdb-api&#39;;
-
-import { AppRoutingModule } from &#39;./app-routing.module&#39;;
-import { AppComponent } from &#39;./app.component&#39;;
-
-&#64;NgModule({
-  declarations: [ AppComponent ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgxTMDBApiModule.forRoot({ apiKey: &#39;YOUR_API_KEY_HERE&#39; })
-  ],
-  bootstrap: [ AppComponent ]
-})
-export class AppModule {}</code></pre></div><p>Then inject <code>TMDBClient</code> and use it.</p>
-<div><pre class="line-numbers"><code class="language-typescript">import { Component, OnInit } from &#39;&#64;angular/core&#39;;
-import { TMDBClient } from &#39;&#64;igorissen/tmdb-api&#39;;
-import { first } from &#39;rxjs/operators&#39;;
-
-&#64;Component({
-  selector: &#39;app-root&#39;,
-  templateUrl: &#39;./app.component.html&#39;,
-  styleUrls: [&#39;./app.component.less&#39;]
-})
-export class AppComponent implements OnInit {
-  constructor(private tmdb: TMDBClient) {}
-
-  public ngOnInit(): void {
-    // fetch TMDB configuration info
-    this.tmdb.configuration
-        .getApiConfiguration()
-        .pipe(first())
-        .subscribe(console.log);
-
-    // fetch movie details with some filters
-    this.tmdb.movies
-        .getDetails(&#39;384018&#39;, {language: &#39;FR&#39;, append_to_response: &#39;videos,images&#39;})
-        .pipe(first())
-        .subscribe(console.log);
-
-    // fetch alternative titles for a movie
-    this.tmdb.movies
-        .getAlternativeTitles(&#39;384018&#39;)
-        .pipe(first())
-        .subscribe(console.log);
-  }
-}</code></pre></div><h2 id="contributing">Contributing</h2>
 
 
 
@@ -104,6 +43,33 @@ export class AppComponent implements OnInit {
 
 
 
+    <ol class="breadcrumb">
+        <li>Dependencies</li>
+    </ol>
+    <ul class="dependencies-list">
+        <li>
+            <b>@angular/animations</b> : ^8.2.5</li>
+        <li>
+            <b>@angular/common</b> : ^8.2.5</li>
+        <li>
+            <b>@angular/compiler</b> : ^8.2.5</li>
+        <li>
+            <b>@angular/core</b> : ^8.2.5</li>
+        <li>
+            <b>@angular/forms</b> : ^8.2.5</li>
+        <li>
+            <b>@angular/platform-browser</b> : ^8.2.5</li>
+        <li>
+            <b>@angular/platform-browser-dynamic</b> : ^8.2.5</li>
+        <li>
+            <b>@angular/router</b> : ^8.2.5</li>
+        <li>
+            <b>rxjs</b> : ~6.5.3</li>
+        <li>
+            <b>tslib</b> : ^1.10.0</li>
+        <li>
+            <b>zone.js</b> : ~0.10.2</li>
+    </ul>
 
                    
 
@@ -126,8 +92,8 @@ export class AppComponent implements OnInit {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 0;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
-            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'package-dependencies';
+            var COMPODOC_CURRENT_PAGE_URL = 'dependencies.html';
        </script>
 
        <script src="./js/libs/custom-elements.min.js"></script>
