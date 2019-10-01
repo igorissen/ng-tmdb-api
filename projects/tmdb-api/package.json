@@ -4,5 +4,22 @@
   "peerDependencies": {
     "@angular/common": "^8.2.5",
     "@angular/core": "^8.2.5"
+  },
+  "author": {
+    "email": "ismael.gorissen@gmail.com",
+    "name": "Ismael Gorissen"
+  },
+  "keywords": [
+    "tmdb",
+    "api",
+    "tmdb api",
+    "themoviedatabase",
+    "ng",
+    "angular"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/igorissen/ng-tmdb-api"
   }
 }
